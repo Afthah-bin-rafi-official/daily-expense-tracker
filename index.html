@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daily Expense Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>Daily Expense Tracker</h1>
+        <p>Track your daily spending by category.</p>
+      </header>
+
+      <section class="card">
+        <h2>Add Expense</h2>
+        <form id="expense-form" class="expense-form">
+          <div class="form-row">
+            <label for="date">Date</label>
+            <input type="date" id="date" required />
+          </div>
+          <div class="form-row">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="">Select category</option>
+              <option value="Fuel">Fuel</option>
+              <option value="Food">Food</option>
+              <option value="Travel">Travel</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Bills">Bills</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Rolling">Rolling</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" min="0" step="0.01" required />
+          </div>
+          <div class="form-row form-row-wide">
+            <label for="description">Description</label>
+            <input type="text" id="description" placeholder="Optional" />
+          </div>
+          <button type="submit" class="btn-primary">Add Expense</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Add Debt</h2>
+        <form id="debt-form" class="expense-form">
+          <div class="form-row">
+            <label for="debt-type">Type</label>
+            <select id="debt-type">
+              <option value="lent">I Lent Money</option>
+              <option value="borrowed">I Borrowed Money</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="debt-name">Person Name</label>
+            <input type="text" id="debt-name" required />
+          </div>
+          <div class="form-row">
+            <label for="debt-amount">Amount</label>
+            <input
+              type="number"
+              id="debt-amount"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="debt-date">Given Date</label>
+            <input type="date" id="debt-date" required />
+          </div>
+          <div class="form-row">
+            <label for="debt-return-date">Return Date</label>
+            <input type="date" id="debt-return-date" />
+          </div>
+          <div class="form-row">
+            <label for="debt-reminder">Reminder</label>
+            <select id="debt-reminder">
+              <option value="none">No reminder</option>
+              <option value="on_return">On return date</option>
+              <option value="day_before">1 day before return</option>
+              <option value="week_before">1 week before return</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Add Debt</button>
+        </form>
+      </section>
+
+      <section class="layout-two-columns">
+        <div class="card">
+          <div class="card-header-inline">
+            <h2>All Expenses</h2>
+            <div class="summary">
+              <span>Total: </span>
+              <strong id="total-all">0</strong>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th class="align-right">Amount</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="expense-tbody"></tbody>
+            </table>
+            <p id="no-expenses" class="empty-state">No expenses yet. Add your first one above.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header-inline">
+            <h2>Debts</h2>
+            <div class="summary">
+              <span>Total Owed: </span>
+              <strong id="total-debts">0</strong>
+            </div>
+          </div>
+          <div class="reminder-banner" id="debt-reminder-banner"></div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Person</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Given Date</th>
+                  <th>Return Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="debt-tbody"></tbody>
+            </table>
+            <p id="no-debts" class="empty-state">No debts added yet.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header-inline">
+            <h2>Analytics</h2>
+            <div class="time-range-toggle">
+              <button type="button" class="toggle-btn active" data-range="month">
+                This Month
+              </button>
+              <button type="button" class="toggle-btn" data-range="week">
+                This Week
+              </button>
+            </div>
+          </div>
+          <div class="analytics-summary">
+            <div>
+              <span>Selected range total</span>
+              <strong id="total-range">0</strong>
+            </div>
+          </div>
+          <div class="charts">
+            <div class="chart-card">
+              <h3>By Category</h3>
+              <canvas id="chartByCategory"></canvas>
+            </div>
+            <div class="chart-card">
+              <h3>By Day</h3>
+              <canvas id="chartByDay"></canvas>
+            </div>
+            <div class="chart-card">
+              <h3>Debts by Person</h3>
+              <canvas id="chartDebtsByPerson"></canvas>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <span class="badge-category badge-Fuel">
+              <span class="badge-category-dot"></span>
+              <span>Fuel</span>
+            </span>
+            <span class="badge-category badge-Food">
+              <span class="badge-category-dot"></span>
+              <span>Food</span>
+            </span>
+            <span class="badge-category badge-Travel">
+              <span class="badge-category-dot"></span>
+              <span>Travel</span>
+            </span>
+            <span class="badge-category badge-Groceries">
+              <span class="badge-category-dot"></span>
+              <span>Groceries</span>
+            </span>
+            <span class="badge-category badge-Bills">
+              <span class="badge-category-dot"></span>
+              <span>Bills</span>
+            </span>
+            <span class="badge-category badge-Shopping">
+              <span class="badge-category-dot"></span>
+              <span>Shopping</span>
+            </span>
+            <span class="badge-category badge-Rolling">
+              <span class="badge-category-dot"></span>
+              <span>Rolling</span>
+            </span>
+            <span class="badge-category badge-Other">
+              <span class="badge-category-dot"></span>
+              <span>Other</span>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
