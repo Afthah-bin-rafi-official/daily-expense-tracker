@@ -1,8 +1,7 @@
 # 💸 Daily Expense Tracker
 
 <p align="center">
-  A modern and powerful expense & debt tracking web app  
-  built with pure JavaScript 🚀
+  A modern and powerful expense & debt tracking web app built with pure JavaScript 🚀
 </p>
 
 <p align="center">
@@ -17,15 +16,6 @@
 
 ---
 
-## 🎥 Preview
-
-<p align="center">
-  <!-- Replace this GIF with your own recording -->
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3V6c2J3dHh5cW9lOXJ2Z3F4d3RkZzB6bGZkN3R1c2R4a2FvZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYt5jPR6QX5pnqM/giphy.gif" width="800"/>
-</p>
-
----
-
 ## 🚀 Live Demo
 
 👉 https://afthah-bin-rafi-official.github.io/daily-expense-tracker/
@@ -35,54 +25,57 @@
 ## ✨ Features
 
 ### 🧾 Expense Management
-- Add & manage daily expenses
-- Categorized spending (Fuel, Food, Travel, etc.)
-- Real-time total calculation
-- Clean tabular view
-- One-click delete
+- Add daily expenses with date, category, amount, and description
+- View all expenses in a clean table
+- Automatic total calculation
+- Delete entries easily
 
-### 💰 Debt Tracker
-- Track **borrowed & lent money**
-- Add return dates
+### 💰 Debt Tracking
+- Track money lent and borrowed
+- Add return dates and reminders
 - Smart reminder banner
-- Total debt calculation
+- Total debt overview
 
 ### 📊 Analytics Dashboard
-- 📈 Expenses by category
-- 📉 Expenses by day
-- 👥 Debts by person
-- Toggle between:
-  - Weekly view
-  - Monthly view
+- Expenses by category
+- Expenses by day
+- Debts by person
+- Toggle between weekly and monthly view
 
-### 🎨 UI Highlights
-- 🌑 Dark Carbon Mint theme
-- ⚡ Smooth animations
-- 📱 Fully responsive
-- ✨ Modern glassmorphism cards
+### 🎨 UI & Design
+- Dark Carbon Mint theme 🌑
+- Smooth animations ⚡
+- Responsive layout 📱
+- Modern card-based UI ✨
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tech        | Usage |
-|------------|------|
+| Technology  | Purpose |
+|------------|--------|
 | HTML5      | Structure |
-| CSS3       | UI & Animations |
+| CSS3       | Styling |
 | JavaScript | Logic |
-| Chart.js   | Data Visualization |
+| Chart.js   | Charts |
 
 ---
 
 ## 📂 Project Structure
 
+
+├── index.html
+├── styles.css
+├── app.js
+
+
 ---
 
 ## ⚙️ How It Works
 
-- Uses **localStorage** for saving data
+- Uses browser **localStorage**
 - No backend required
-- Fully offline after load
+- Works offline after loading
 
 ---
 
@@ -91,32 +84,46 @@
 ```bash
 git clone https://github.com/Afthah-bin-rafi-official/daily-expense-tracker.git
 cd daily-expense-tracker
-```
+ ```
+
 Open index.html in your browser.
 
-📈 Future Improvements
-📤 Export data (CSV / PDF)
-☁️ Cloud sync
-🔐 Authentication
-📊 Budget alerts
-📱 Mobile app version
-🤝 Contributing
+## 📈 Future Improvements
+-📤 Export data (CSV / PDF)
+-☁️ Cloud sync
+-🔐 Authentication
+-📊 Budget alerts
+-📱 Mobile app version
 
-Pull requests are welcome!
-Feel free to fork and improve this project.
+---
 
-📄 License
+## 🤝 Contributing
 
-MIT License
+-Pull requests are welcome!
+-Feel free to fork and improve this project.
 
-👨‍💻 Author
+---
 
-Afthah Bin Rafi
+## 📄 License
 
-🔗 Links
-🌐 Portfolio: https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
-💸 Project: https://afthah-bin-rafi-official.github.io/daily-expense-tracker/
-❤️ Footer
+-MIT License
 
-Designed by: afthahbinrafi
-🔗 https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
+---
+
+## 👨‍💻 Author
+
+-Afthah Bin Rafi
+
+---
+
+## 🔗 Links
+-🌐 Portfolio: https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
+-💸 Project: https://afthah-bin-rafi-official.github.io/daily-expense-tracker/
+
+--
+
+## ❤️ Footer
+
+## Designed by: afthahbinrafi
+-🔗 https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
+---
