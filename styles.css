@@ -511,7 +511,7 @@ tbody tr:hover {
 
   /* Expenses Table Layout */
   #expense-tbody tr {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas:
       "date category"
       "desc amount";
@@ -525,23 +525,32 @@ tbody tr:hover {
   #expense-tbody .td-desc { grid-area: desc; color: var(--text-muted); font-size: 0.9rem; }
   #expense-tbody .td-desc::before { content: "Desc: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
-  #expense-tbody .td-amount { grid-area: amount; justify-content: flex-end; font-weight: 600; font-size: 1.05rem; }
+  #expense-tbody .td-amount { grid-area: amount; justify-content: flex-start; font-weight: 600; font-size: 1.05rem; margin-left: 12px; }
   #expense-tbody .td-amount::before { content: "Amount: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
   /* Debts Table Layout */
   #debt-tbody tr {
-    grid-template-columns: 1.5fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "name type amount"
-      "given return .";
+      "name type"
+      "amount amount"
+      "given return";
   }
-  #debt-tbody .td-name { grid-area: name; font-weight: 600; font-size: 0.95rem; }
-  #debt-tbody .td-name::before { content: "Person: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
+  #debt-tbody .td-name { grid-area: name; font-weight: 600; font-size: 0.82rem; }
+  #debt-tbody .td-name::before { content: "Person: "; margin-right: 6px; opacity: 0.6; font-size: 0.8rem; font-weight: normal; }
   
-  #debt-tbody .td-type { grid-area: type; color: var(--text-muted); font-size: 0.85rem; justify-content: center; }
-  #debt-tbody .td-type::before { content: "Type: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
+  #debt-tbody .td-type { grid-area: type; color: var(--text-muted); font-size: 0.82rem; justify-content: flex-end; padding-right: 50px !important; }
+  #debt-tbody .td-type::before { content: "Type: "; margin-right: 6px; opacity: 0.6; font-size: 0.8rem; font-weight: normal; }
   
-  #debt-tbody .td-amount { grid-area: amount; justify-content: flex-end; font-weight: 600; padding-right: 60px !important; }
+  #debt-tbody .td-amount { 
+    grid-area: amount; 
+    justify-content: flex-start; 
+    font-weight: 600; 
+    padding: 8px 0 !important; 
+    margin: 4px 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15); 
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  }
   #debt-tbody .td-amount::before { content: "Amount: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
   #debt-tbody .td-given { grid-area: given; font-size: 0.85rem; color: var(--text-muted); }
