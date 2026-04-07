@@ -522,10 +522,10 @@ tbody tr:hover {
   #expense-tbody .td-category { grid-area: category; justify-content: flex-end; padding-right: 60px !important; }
   #expense-tbody .td-category::before { content: "Category: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
-  #expense-tbody .td-desc { grid-area: desc; color: var(--text-muted); font-size: 0.9rem; }
+  #expense-tbody .td-desc { grid-area: desc; color: var(--text-muted); font-size: 0.9rem; border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 12px !important; margin-top: 6px; }
   #expense-tbody .td-desc::before { content: "Desc: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
-  #expense-tbody .td-amount { grid-area: amount; justify-content: flex-start; font-weight: 600; font-size: 1.05rem; margin-left: 12px; }
+  #expense-tbody .td-amount { grid-area: amount; justify-content: flex-start; font-weight: 600; font-size: 1.05rem; margin-left: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.15); padding-top: 12px !important; margin-top: 6px; }
   #expense-tbody .td-amount::before { content: "Amount: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
   /* Debts Table Layout */
@@ -544,14 +544,25 @@ tbody tr:hover {
   
   #debt-tbody .td-amount { 
     grid-area: amount; 
-    justify-content: flex-start; 
+    justify-content: center; 
+    text-align: center;
     font-weight: 600; 
     padding: 8px 0 !important; 
     margin: 4px 0;
-    border-top: 1px dashed rgba(255, 255, 255, 0.15); 
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
   }
-  #debt-tbody .td-amount::before { content: "Amount: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
+  #debt-tbody .td-amount::before { 
+    content: ""; 
+    flex: 1; 
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); 
+    margin-right: 12px; 
+  }
+  #debt-tbody .td-amount::after { 
+    content: ""; 
+    flex: 1; 
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15); 
+    margin-left: 12px; 
+  }
   
   #debt-tbody .td-given { grid-area: given; font-size: 0.85rem; color: var(--text-muted); }
   #debt-tbody .td-return { grid-area: return; font-size: 0.85rem; color: var(--text-muted); justify-content: flex-start; }
