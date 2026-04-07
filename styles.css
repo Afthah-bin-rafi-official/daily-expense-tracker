@@ -318,9 +318,13 @@ tbody tr:hover {
   border: none;
   background: var(--danger-soft);
   color: var(--danger);
-  padding: 4px 8px;
-  font-size: 0.75rem;
+  padding: 6px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }
 
 .delete-btn:hover {
@@ -526,10 +530,10 @@ tbody tr:hover {
   
   /* Debts Table Layout */
   #debt-tbody tr {
-    grid-template-columns: 1.25fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
     grid-template-areas:
       "name type amount"
-      "given given return";
+      "given return .";
   }
   #debt-tbody .td-name { grid-area: name; font-weight: 600; font-size: 0.95rem; }
   #debt-tbody .td-name::before { content: "Person: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
@@ -541,7 +545,7 @@ tbody tr:hover {
   #debt-tbody .td-amount::before { content: "Amount: "; margin-right: 6px; opacity: 0.6; font-size: 0.85rem; font-weight: normal; }
   
   #debt-tbody .td-given { grid-area: given; font-size: 0.85rem; color: var(--text-muted); }
-  #debt-tbody .td-return { grid-area: return; font-size: 0.85rem; color: var(--text-muted); justify-content: flex-end; }
+  #debt-tbody .td-return { grid-area: return; font-size: 0.85rem; color: var(--text-muted); justify-content: flex-start; }
   
   #debt-tbody .td-given::before { content: "Given: "; margin-right: 4px; opacity: 0.8; }
   #debt-tbody .td-return::before { content: "Return: "; margin-right: 4px; opacity: 0.8; }
