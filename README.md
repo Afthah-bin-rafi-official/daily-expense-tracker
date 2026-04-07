@@ -88,42 +88,45 @@ cd daily-expense-tracker
 
 Open index.html in your browser.
 
-## 📈 Future Improvements
--📤 Export data (CSV / PDF)
--☁️ Cloud sync
--🔐 Authentication
--📊 Budget alerts
--📱 Mobile app version
+### 📈 Future Improvements
+
+- 📤 Export data (CSV / PDF)
+- ☁️ Cloud sync
+- 🔐 Authentication
+- 📊 Budget alerts
+- 📱 Mobile app version
 
 ---
 
-## 🤝 Contributing
+### 🤝 Contributing
 
--Pull requests are welcome!
--Feel free to fork and improve this project.
-
----
-
-## 📄 License
-
--MIT License
+- Pull requests are welcome!
+- Feel free to fork and improve this project.
 
 ---
 
-## 👨‍💻 Author
+### 🔗 Links
 
--Afthah Bin Rafi
+- 🌐 **Portfolio**  
+  https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
+
+- 💸 **Project Demo**  
+  https://afthah-bin-rafi-official.github.io/daily-expense-tracker/
 
 ---
 
-## 🔗 Links
--🌐 Portfolio: https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
--💸 Project: https://afthah-bin-rafi-official.github.io/daily-expense-tracker/
+### 📄 License
 
---
+- MIT License
 
-## ❤️ Footer
+---
 
-## Designed by: afthahbinrafi
--🔗 https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/
+### 👨‍💻 Author
+
+- Afthah Bin Rafi
+
+---
+
+#### Designed by: [afthahbinrafi](https://afthah-bin-rafi-official.github.io/afthahbinrafi-portfolio/)
+
 ---
